@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://tungyuchiang.github.io/"/>
+    <link rel="canonical" href="https://tungyuchiang.github.io/2025/02/03/day-1-what-is-mvc/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -22,14 +22,18 @@
     
         
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://tungyuchiang.github.io/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day1 - MVC架構">
+<meta property="og:url" content="https://tungyuchiang.github.io/2025/02/03/Day-1-What-is-MVC/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tungyuchiang.github.io/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-02-03T13:13:39.000Z">
+<meta property="article:modified_time" content="2025-02-03T13:16:03.833Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Backend">
+<meta property="article:tag" content="Architecture">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tungyuchiang.github.io/images/redefine-og.webp">
     
@@ -43,7 +47,7 @@
     
     <title>
         
-            21 Engineer - Hacked to Freedom
+            Day1 - MVC架構 | 21 Engineer
         
     </title>
 
@@ -276,125 +280,17 @@
 <main class="page-container" id="swup">
 
 	
-	
-    <style>
-        .home-banner-container {
-            background: none !important;
-        }
-        .home-article-item,
-        .sidebar-links,
-        .sidebar-content,
-        a.page-number,
-        a.extend,
-        .sidebar-links .links:hover,
-        .right-bottom-tools,
-        footer.footer {
-            background-color: var(--background-color-transparent-80) !important;
-        }
-        .right-bottom-tools:hover,
-        a.page-number:hover,
-        a.extend:hover {
-            background-color: var(--primary-color) !important;
-        }
-        .site-info,
-        .home-article-sticky-label {
-            background-color: var(--background-color-transparent-15) !important;
-        }
-        .home-article-sticky-label {
-            backdrop-filter: none !important;
-        }
-    </style>
-    <div class="home-banner-background transition-fade fixed top-0 left-0 w-screen h-screen scale-125 sm:scale-110 box-border will-change-transform bg-cover">
-        <img src="/images/wallhaven-wqery6-light.webp" alt="home-banner-background" class="w-full h-full object-cover dark:hidden">
-        <img src="/images/wallhaven-wqery6-dark.webp" alt="home-banner-background" class="w-full h-full object-cover hidden dark:block">
-    </div>
-
-
-<div class="home-banner-container flex justify-center items-center transition-fade relative">
-    
-    <div class="content mt-8 flex flex-col justify-center items-center transition-fade-down">
-        <div class="description flex flex-col justify-center items-center w-screen font-medium text-center"
-        
-        >
-            Code Liberates
-            
-            
-                <p><i id="subtitle"></i></p>
-            
-        </div>
-        
-            
-            <div class="absolute bottom-0.5 flex flex-row justify-between max-w-[1340px] items-center w-full px-8 sm:px-12">
-                <div class="flex p-3 bg-gray-300/50 dark:bg-gray-500/40 backdrop-blur-lg border border-white/20 dark:border-gray-500/30 group rounded-full cursor-pointer flex justify-center items-center aspect-square h-full shadow-redefine-flat hover:shadow-redefine-flat-hover transition-shadow" onclick="scrollToMain()" >
-                    <i class="fa-solid fa-arrow-down fa-fw fa-lg group-hover:translate-y-1 transition-transform"></i>
-                </div>
-                <div class="social-contacts px-6 py-3 bg-gray-300/50 dark:bg-gray-500/40 backdrop-blur-lg border border-white/20 dark:border-gray-500/30 shadow-redefine-flat rounded-full flex flex-row gap-3 items-center">
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                            
-                                <span class="social-contact-item">
-                                    <a target="_blank" href="https://github.com/TungYuChiang">
-                                        <i class="fa-brands fa-github fa-fw fa-lg"></i>
-                                    </a>
-                                </span>
-                            
-                        
-                    
-                        
-                            
-                                <span class="social-contact-item">
-                                    <a target="_blank" href="https://www.instagram.com/tung_0319/?hl=en">
-                                        <i class="fa-brands fa-instagram fa-fw fa-lg"></i>
-                                    </a>
-                                </span>
-                            
-                        
-                    
-                        
-                            
-                                <span class="social-contact-item">
-                                    <a target="_blank" href="https://www.linkedin.com/in/東諭-江-0697a9264/">
-                                        <i class="fa-brands fa-linkedin fa-fw fa-lg"></i>
-                                    </a>
-                                </span>
-                            
-                        
-                    
-                    
-                </div>
-            </div>
-        
-    </div>
-    <script>
-        const scrollToMain = ()=> {
-            console.log('scroll');
-            const target = document.querySelector('.main-content-container');
-            target.scrollIntoView({ behavior: 'smooth'});
-        }
-    </script>
-</div>
-	
 
 	<div class="main-content-container flex flex-col justify-between min-h-dvh">
 		<div class="main-content-header">
 			<header class="navbar-container px-6 md:px-12">
-    <div class="navbar-content transition-navbar has-home-banner">
+    <div class="navbar-content transition-navbar ">
         <div class="left">
             
             <a class="logo-title" href="/">
-                <h1>
+                
                 21 Engineer
-                </h1>
+                
             </a>
         </div>
 
@@ -408,7 +304,7 @@
 
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="active"
+                                <a class=""
                                    href="/"
                                         >
                                     <i class="fa-regular fa-house fa-fw"></i>
@@ -509,7 +405,7 @@
 
                     <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
                         
-                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
                            href="/"
                         >
                             <span>
@@ -642,250 +538,233 @@
 
 		<div class="main-content-body transition-fade-up">
 			
-			<div class="home-sidebar-container">
-    <div class="sticky-container sticky">
-        
-        
-            
-                <div class="sidebar-links">
-                    <div class="site-info">
-                        <div class="site-name">21 Engineer</div>
-                        
-                    </div>
-                    
-                        
-                            
-                                <a class="links" href="/archives">
-                                    
-                                        <i class="fa-regular fa-archive icon-space"></i>
-                                    
-                                    <span class="link-name">Archives</span>
-                                </a>
-                            
-                        
-                            
-                                <a class="links" href="/tags">
-                                    
-                                        <i class="fa-regular fa-tags icon-space"></i>
-                                    
-                                    <span class="link-name">Tags</span>
-                                </a>
-                            
-                        
-                            
-                                <a class="links" href="/categories">
-                                    
-                                        <i class="fa-regular fa-folder icon-space"></i>
-                                    
-                                    <span class="link-name">Categories</span>
-                                </a>
-                            
-                        
-                    
-                </div>
-            
-            <div class="sidebar-content"  marginTop >
-                <div class="avatar flex justify-center">
-    <img src="/images/head.jpg">
-</div>
-                <div class="author flex flex-col justify-center my-2.5 mx-0">
-    <div class="name">Tung-Yu Chiang</div>
-    
-        <div class="label">Lv1</div>
-    
-</div>
-                <div class="statistics flex justify-around my-2.5">
-    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
-        <div class="label text-third-text-color text-sm">Tags</div>
-    </a>
-    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
-        <div class="label text-third-text-color text-sm">Categories</div>
-    </a>
-    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
-        <div class="label text-third-text-color text-sm">Posts</div>
-    </a>
-</div>
-            </div>
-        
-
-    </div>
-</div>
-
-			
 
 			<div class="main-content">
-				<div class="home-content-container">
-    <ul class="home-article-list">
-        
-            <li class="home-article-item">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
 
-                
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Day1 - MVC架構</h1>
+			</div>
+			
+		</div>
 
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2025/02/03/Day-1-What-is-MVC/">
-                            Day1 - MVC架構
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            前言還記得前一篇文提到，我請GPT幫我做的9天計劃嗎，因為我前一陣子就有稍微碰過Spring Boot，所以今天雖然是第一天，但我把前兩天的事情都做了，不過我自己覺得應該要更快的，畢竟CRUD我在Python Flask那邊有碰過，不過我自己在資料庫的連接這邊卡了一下子才搞懂Spring Boot的設定。
-這邊其實有蠻多知識點可以輸出的，像是整個Spring Boot 裡面的觀念如IoC.....
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Feb 03 2025 21:13:39 GMT+0800">
-                
-                    2025-02-03
-                
-            </span>
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/head.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Tung-Yu Chiang</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-02-03 21:13:39</span>
+        <span class="mobile">2025-02-03 21:13:39</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-02-03 21:16:03</span>
+            <span class="mobile">2025-02-03 21:16:03</span>
+            <span class="hover-info">Updated</span>
         </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Backend/">Backend</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Architecture/">Architecture</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
+    
 
-    <a href="/2025/02/03/Day-1-What-is-MVC/">Read more<span class="seo-reader-text">Day1 - MVC架構</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
                 
-
+                    <li>
+                        <a href="/tags/Backend/">Backend</a>&nbsp;
+                    </li>
                 
-
+                    <li>
+                        | <a href="/tags/Architecture/">Architecture</a>&nbsp;
+                    </li>
                 
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2025/01/25/%E6%96%B0%E5%B9%B4%E8%87%AA%E6%88%91%E9%A7%AD%E5%AE%A2%E6%9D%BE/">
-                            新年自我駭客松
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            前言每年農曆過年，我家都沒有什麼活動，尤其奶奶走了之後的幾年裡，過年很多時候都感覺到無聊，最近接觸到了很多AI議題，突然覺的或許未來會多出很多機會（不知道是不是我太樂觀），想趁這次過年來個6~8天的駭客松，我有揪實驗室的朋友一起，但每個人要做的事情都不太一樣，像是有人想要從FW轉職到DV，他們過年要動手寫5 stage mips cpu 並在FPGA上面模擬，而我則是想趁這次過年，將Back...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sat Jan 25 2025 11:57:51 GMT+0800">
-                
-                    2025-01-25
-                
-            </span>
+            </ul>
         </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/Backend/">Backend</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/SpringBoot/">SpringBoot</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
+    
 
-    <a href="/2025/01/25/%E6%96%B0%E5%B9%B4%E8%87%AA%E6%88%91%E9%A7%AD%E5%AE%A2%E6%9D%BE/">Read more<span class="seo-reader-text">新年自我駭客松</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2025/01/24/%E6%8A%80%E8%A1%93%E9%83%A8%E8%90%BD%E6%A0%BC%E7%9A%84%E9%96%8B%E7%AB%AF/">
-                            技術部落格的開端
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            
-                            前言想過無數次分享自己的技術心得，但總是因為覺得自己寫的東西不夠好、不夠有價值，總覺得麻煩，所以一直沒有開始。但內心深處很崇拜也很感謝那些願意分享自己技術心得的人，終於在最近下定決心，開始寫技術部落格。
-為什麼要寫部落格在這個充滿Generative AI的時代，我們可以輕易的透過AI工具學習大量的知識，解決問題的速度越來越快，但自己卻感覺好像少了些什麼我想透過寫部落格，記錄自己的學習過程，...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jan 24 2025 21:50:21 GMT+0800">
-                
-                    2025-01-24
-                
-            </span>
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
         </span>
-        
-        
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>還記得前一篇文提到，我請GPT幫我做的9天計劃嗎，因為我前一陣子就有稍微碰過Spring Boot，所以今天雖然是第一天，但我把前兩天的事情都做了，不過我自己覺得應該要更快的，畢竟CRUD我在Python Flask那邊有碰過，不過我自己在資料庫的連接這邊卡了一下子才搞懂Spring Boot的設定。</p>
+<p>這邊其實有蠻多知識點可以輸出的，像是整個Spring Boot 裡面的觀念如IoC..等等<br>之後會慢慢補上，但因為現在在自我駭客松期間，希望把時間都盡量花在完成Project。</p>
+<h3 id="Day-1-總結"><a href="#Day-1-總結" class="headerlink" title="Day 1 總結"></a>Day 1 總結</h3><ul>
+<li>Java 初始化 Spring Boot 項目</li>
+<li>完成 Product 的 REST API</li>
+</ul>
+<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>今天在寫Product的時候，我一開始是在 GPT 下指令請他告訴我詳細 Day 2 要做什麼，GPT回答：<br>🔹 1. 設計 Product 實體類<br>🔹 2. 創建 ProductRepository 介面<br>🔹 3. 創建 ProductService 層<br>🔹 4. 創建 ProductController 層<br>🔹 5. 測試 API<br>剛開始不太明白為什麼要分層Repository, Service, Controller，然後因為在設定上出現了問題，我就去把古古 <a class="link"   target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20151036/ironman/6130" >Spring Boot 零基礎入門<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 我沒看完的地方看一看，我之前是看到jdbc設定那邊，結果發現古古在後面馬上就講到了Controller-Service-Dao，那Repository 其實就是指 DAO 嗎？（似乎好像不一樣，之後再找更詳細的文章來補充）</p>
+<h3 id="為什麼需要軟體工程？"><a href="#為什麼需要軟體工程？" class="headerlink" title="為什麼需要軟體工程？"></a>為什麼需要軟體工程？</h3><p>白話文：就是當專案越來越大時，若每個人都按照自己的想法下去寫code，那整個專案就會變的雜亂無章，後續的維護會相當的困難，演化到今天就有許多設計模式，而網頁開發最常看到的就是 MVC。</p>
+<ol>
+<li>軟體工程定義<br>軟體工程（Software Engineering） 是一門運用 工程方法 來設計、開發、測試、部署和維護軟體的學科。它的目標是使用系統化、可度量的方式，來建造高品質、可靠且維護成本低的軟體。</li>
+<li>為什麼需要軟體工程？<ul>
+<li>解決複雜問題： 當系統變得龐大且複雜，單靠個人經驗難以管理，軟體工程提供方法論。</li>
+<li>提高效率與品質： 系統化的流程（如版本控制、測試）能提高開發效率和軟體品質。</li>
+<li>可維護性和擴展性： 良好的設計（如分層架構）讓軟體更容易維護和擴展。</li>
+</ul>
+</li>
+</ol>
+<h3 id="MVC-是什麼？"><a href="#MVC-是什麼？" class="headerlink" title="MVC 是什麼？"></a>MVC 是什麼？</h3><p>1️⃣ 定義<br>MVC（Model-View-Controller） 是一種設計模式，用於將軟體應用分為三個主要部分：</p>
+<ul>
+<li>模型（Model</li>
+<li>視圖（View）</li>
+<li>控制器（Controller</li>
+</ul>
+<p>這種分層的架構讓系統更容易開發、維護和擴展。</p>
+<h3 id="2️⃣-MVC-的三個核心組件"><a href="#2️⃣-MVC-的三個核心組件" class="headerlink" title="2️⃣ MVC 的三個核心組件"></a><strong>2️⃣ MVC 的三個核心組件</strong></h3><table>
+<thead>
+<tr>
+<th>組件</th>
+<th>職責</th>
+<th>在 Spring Boot 中的對應</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Model（模型）</strong></td>
+<td>負責 <strong>資料和商業邏輯</strong>，例如數據庫中的資料結構和操作。</td>
+<td><code>Product.java</code>, <code>User.java</code>, <code>ProductRepository.java</code></td>
+</tr>
+<tr>
+<td><strong>View（視圖）</strong></td>
+<td>負責 <strong>顯示資料</strong>，通常是前端畫面。</td>
+<td>前端頁面（HTML, Thymeleaf, 或 REST API 回應的 JSON）</td>
+</tr>
+<tr>
+<td><strong>Controller（控制器）</strong></td>
+<td>負責 <strong>接收請求、調用 Model 處理資料，並返回 View</strong>。</td>
+<td><code>ProductController.java</code>, <code>AuthController.java</code></td>
+</tr>
+</tbody></table>
+
+		</div>
+
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Backend/">#Backend</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Architecture/">#Architecture</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2025/01/25/%E6%96%B0%E5%B9%B4%E8%87%AA%E6%88%91%E9%A7%AD%E5%AE%A2%E6%9D%BE/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">新年自我駭客松</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
     </div>
+    
 
-    <a href="/2025/01/24/%E6%8A%80%E8%A1%93%E9%83%A8%E8%90%BD%E6%A0%BC%E7%9A%84%E9%96%8B%E7%AB%AF/">Read more<span class="seo-reader-text">技術部落格的開端</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
         
-    </ul>
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
 
-    <div class="home-paginator px-7 py-5">
-        <div class="paginator">
-	<span class="page-number current">1</span>
-</div>
-  
-    </div>
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
 </div>
 
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">Day1 - MVC架構</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Day-1-%E7%B8%BD%E7%B5%90"><span class="nav-text">Day 1 總結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-text">MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%EF%BC%9F"><span class="nav-text">為什麼需要軟體工程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-text">MVC 是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%B8%8F%E2%83%A3-MVC-%E7%9A%84%E4%B8%89%E5%80%8B%E6%A0%B8%E5%BF%83%E7%B5%84%E4%BB%B6"><span class="nav-text">2️⃣ MVC 的三個核心組件</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
 			</div>
 
 			
@@ -963,6 +842,26 @@
 		</div>
 	</div>
 
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
 	
 
 	<div class="right-side-tools-container">
