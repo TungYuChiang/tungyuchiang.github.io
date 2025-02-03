@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tungyuchiang.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-02-03T13:13:39.000Z">
-<meta property="article:modified_time" content="2025-02-03T13:16:03.833Z">
+<meta property="article:modified_time" content="2025-02-03T13:57:23.012Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Backend">
 <meta property="article:tag" content="Architecture">
@@ -574,8 +574,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-02-03 21:16:03</span>
-            <span class="mobile">2025-02-03 21:16:03</span>
+            <span class="desktop">2025-02-03 21:57:23</span>
+            <span class="mobile">2025-02-03 21:57:23</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -623,7 +623,15 @@
 <li>Java 初始化 Spring Boot 項目</li>
 <li>完成 Product 的 REST API</li>
 </ul>
-<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>今天在寫Product的時候，我一開始是在 GPT 下指令請他告訴我詳細 Day 2 要做什麼，GPT回答：<br>🔹 1. 設計 Product 實體類<br>🔹 2. 創建 ProductRepository 介面<br>🔹 3. 創建 ProductService 層<br>🔹 4. 創建 ProductController 層<br>🔹 5. 測試 API<br>剛開始不太明白為什麼要分層Repository, Service, Controller，然後因為在設定上出現了問題，我就去把古古 <a class="link"   target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20151036/ironman/6130" >Spring Boot 零基礎入門<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 我沒看完的地方看一看，我之前是看到jdbc設定那邊，結果發現古古在後面馬上就講到了Controller-Service-Dao，那Repository 其實就是指 DAO 嗎？（似乎好像不一樣，之後再找更詳細的文章來補充）</p>
+<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>今天準備完成 Product 相關 API 的時候，我一開始是在 GPT 下指令請他告訴我詳細 Day 2 要做什麼，GPT回答：</p>
+<ol>
+<li>設計 Product 實體類</li>
+<li>創建 ProductRepository 介面</li>
+<li>創建 ProductService 層</li>
+<li>創建 ProductController 層</li>
+<li>測試 API</li>
+</ol>
+<p>剛開始不太明白為什麼要分層 Repository, Service, Controller ，然後因為在設定上出現了問題，我就去把古古 <a class="link"   target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20151036/ironman/6130" >Spring Boot 零基礎入門<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 我沒看完的地方看一看，我之前是看到jdbc設定那邊，結果發現古古在後面馬上就講到了Controller-Service-Dao，那Repository 其實就是指 DAO 嗎？（似乎好像不一樣，之後再找更詳細的文章來補充）</p>
 <h3 id="為什麼需要軟體工程？"><a href="#為什麼需要軟體工程？" class="headerlink" title="為什麼需要軟體工程？"></a>為什麼需要軟體工程？</h3><p>白話文：就是當專案越來越大時，若每個人都按照自己的想法下去寫code，那整個專案就會變的雜亂無章，後續的維護會相當的困難，演化到今天就有許多設計模式，而網頁開發最常看到的就是 MVC。</p>
 <ol>
 <li>軟體工程定義<br>軟體工程（Software Engineering） 是一門運用 工程方法 來設計、開發、測試、部署和維護軟體的學科。它的目標是使用系統化、可度量的方式，來建造高品質、可靠且維護成本低的軟體。</li>
@@ -634,7 +642,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="MVC-是什麼？"><a href="#MVC-是什麼？" class="headerlink" title="MVC 是什麼？"></a>MVC 是什麼？</h3><p>1️⃣ 定義<br>MVC（Model-View-Controller） 是一種設計模式，用於將軟體應用分為三個主要部分：</p>
+<h3 id="MVC-是什麼？"><a href="#MVC-是什麼？" class="headerlink" title="MVC 是什麼？"></a>MVC 是什麼？</h3><h3 id="1️⃣-定義"><a href="#1️⃣-定義" class="headerlink" title="1️⃣ 定義"></a><strong>1️⃣ 定義</strong></h3><p>MVC（Model-View-Controller） 是一種設計模式，用於將軟體應用分為三個主要部分：</p>
 <ul>
 <li>模型（Model</li>
 <li>視圖（View）</li>
@@ -758,7 +766,7 @@
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">Day1 - MVC架構</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Day-1-%E7%B8%BD%E7%B5%90"><span class="nav-text">Day 1 總結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-text">MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%EF%BC%9F"><span class="nav-text">為什麼需要軟體工程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-text">MVC 是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%B8%8F%E2%83%A3-MVC-%E7%9A%84%E4%B8%89%E5%80%8B%E6%A0%B8%E5%BF%83%E7%B5%84%E4%BB%B6"><span class="nav-text">2️⃣ MVC 的三個核心組件</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Day-1-%E7%B8%BD%E7%B5%90"><span class="nav-text">Day 1 總結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-text">MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%EF%BC%9F"><span class="nav-text">為什麼需要軟體工程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-text">MVC 是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%B8%8F%E2%83%A3-%E5%AE%9A%E7%BE%A9"><span class="nav-text">1️⃣ 定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%B8%8F%E2%83%A3-MVC-%E7%9A%84%E4%B8%89%E5%80%8B%E6%A0%B8%E5%BF%83%E7%B5%84%E4%BB%B6"><span class="nav-text">2️⃣ MVC 的三個核心組件</span></a></li></ol></li></ol>
 
 	</div>
 </div>
