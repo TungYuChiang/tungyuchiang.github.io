@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tungyuchiang.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-02-03T13:13:39.000Z">
-<meta property="article:modified_time" content="2025-02-03T13:57:23.012Z">
+<meta property="article:modified_time" content="2025-02-04T13:05:09.283Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Backend">
 <meta property="article:tag" content="Architecture">
@@ -574,8 +574,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-02-03 21:57:23</span>
-            <span class="mobile">2025-02-03 21:57:23</span>
+            <span class="desktop">2025-02-04 21:05:09</span>
+            <span class="mobile">2025-02-04 21:05:09</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -619,7 +619,8 @@
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
 			<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>還記得前一篇文提到，我請GPT幫我做的9天計劃嗎，因為我前一陣子就有稍微碰過Spring Boot，所以今天雖然是第一天，但我把前兩天的事情都做了，不過我自己覺得應該要更快的，畢竟CRUD我在Python Flask那邊有碰過，不過我自己在資料庫的連接這邊卡了一下子才搞懂Spring Boot的設定。</p>
 <p>這邊其實有蠻多知識點可以輸出的，像是整個Spring Boot 裡面的觀念如IoC..等等<br>之後會慢慢補上，但因為現在在自我駭客松期間，希望把時間都盡量花在完成Project。</p>
-<h3 id="Day-1-總結"><a href="#Day-1-總結" class="headerlink" title="Day 1 總結"></a>Day 1 總結</h3><ul>
+<p><strong>Day 1 總結</strong></p>
+<ul>
 <li>Java 初始化 Spring Boot 項目</li>
 <li>完成 Product 的 REST API</li>
 </ul>
@@ -642,7 +643,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="MVC-是什麼？"><a href="#MVC-是什麼？" class="headerlink" title="MVC 是什麼？"></a>MVC 是什麼？</h3><h3 id="1️⃣-定義"><a href="#1️⃣-定義" class="headerlink" title="1️⃣ 定義"></a><strong>1️⃣ 定義</strong></h3><p>MVC（Model-View-Controller） 是一種設計模式，用於將軟體應用分為三個主要部分：</p>
+<h3 id="1️⃣-定義"><a href="#1️⃣-定義" class="headerlink" title="1️⃣ 定義"></a><strong>1️⃣ 定義</strong></h3><p>MVC（Model-View-Controller） 是一種設計模式，用於將軟體應用分為三個主要部分：</p>
 <ul>
 <li>模型（Model</li>
 <li>視圖（View）</li>
@@ -673,6 +674,34 @@
 <td><code>ProductController.java</code>, <code>AuthController.java</code></td>
 </tr>
 </tbody></table>
+<h2 id="Controller-Service-Dao"><a href="#Controller-Service-Dao" class="headerlink" title="Controller-Service-Dao"></a>Controller-Service-Dao</h2><h3 id="1️⃣-Controller-Service-DAO-是什麼？"><a href="#1️⃣-Controller-Service-DAO-是什麼？" class="headerlink" title="1️⃣ Controller-Service-DAO 是什麼？"></a><strong>1️⃣ Controller-Service-DAO 是什麼？</strong></h3><ul>
+<li>Controller：負責接收和處理來自客戶端（前端或 API 請求）的輸入，並返回適當的回應。</li>
+<li>Service：負責業務邏輯，處理數據和應用邏輯。它會調用 DAO 層來存取數據。</li>
+<li>DAO（Data Access Object）：負責與資料庫互動，執行 CRUD 操作（Create, Read, Update, Delete）。</li>
+</ul>
+
+  <div class="note p-4 mb-4 rounded-small primary">
+    <p>簡單來說： Controller-Service-DAO 是對 MVC 中 Model 層的細化，使得程式碼更加模組化，分工更明確。</p>
+
+  </div>
+<h3 id="2️⃣-範例"><a href="#2️⃣-範例" class="headerlink" title="2️⃣ 範例"></a><strong>2️⃣ 範例</strong></h3><p>拿這次開發的電商 side project 當中 Product 示範，我們有</p>
+<h4 id="ProductController"><a href="#ProductController" class="headerlink" title="ProductController"></a><strong>ProductController</strong></h4><ul>
+<li>接收 HTTP 請求（GET, POST, PUT, DELETE）。</li>
+<li>解析請求參數，並將請求轉發給 Service 層。</li>
+<li>將 Service 返回的結果包裝成 HTTP 回應（JSON 格式）。</li>
+</ul>
+<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping</span></span><br><span class="line">    <span class="keyword">public</span> ResponseEntity&lt;Product&gt; <span class="title function_">createProduct</span><span class="params">(<span class="meta">@RequestBody</span> Product product)</span> &#123;</span><br><span class="line">        <span class="type">Product</span> <span class="variable">createdProduct</span> <span class="operator">=</span> productService.createProduct(product);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ResponseEntity</span>&lt;&gt;(createdProduct, HttpStatus.CREATED);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+<h4 id="ProductService"><a href="#ProductService" class="headerlink" title="ProductService"></a><strong>ProductService</strong></h4><p>負責應用的核心業務邏輯，像是 redis可以在這層處理。</p>
+<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Product&gt; <span class="title function_">getAllProducts</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">cacheKey</span> <span class="operator">=</span> <span class="string">&quot;allProducts&quot;</span>;</span><br><span class="line">    ValueOperations&lt;String, Object&gt; valueOperations = redisTemplate.opsForValue();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 檢查 Redis 快取</span></span><br><span class="line">    List&lt;Product&gt; products = (List&lt;Product&gt;) valueOperations.get(cacheKey);</span><br><span class="line">    <span class="keyword">if</span> (products == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果快取不存在，從 MySQL 查詢</span></span><br><span class="line">        products = productRepository.findAll();</span><br><span class="line">        <span class="comment">// 存入 Redis 並設置過期時間</span></span><br><span class="line">        valueOperations.set(cacheKey, products, <span class="number">10</span>, TimeUnit.MINUTES);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> products;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="ProductRepository"><a href="#ProductRepository" class="headerlink" title="ProductRepository"></a><strong>ProductRepository</strong></h4><p>其實直接取名為ProductDAO可能會更合適，因為我沒打算使用JPA，打算全部都用 SQL 來撰寫這個Project，而 Repository 這個命名比較抽象，DAO 更符合傳統針對資料存取的命名。</p>
+<div class="code-container" data-rel="Java"><figure class="iseeu highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Product <span class="title function_">save</span><span class="params">(Product product)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;INSERT INTO products (name, description, price, stock, category) VALUES (?, ?, ?, ?, ?)&quot;</span>;</span><br><span class="line">        <span class="type">KeyHolder</span> <span class="variable">keyHolder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">GeneratedKeyHolder</span>();</span><br><span class="line"></span><br><span class="line">        jdbcTemplate.update(connection -&gt; &#123;</span><br><span class="line">            <span class="type">PreparedStatement</span> <span class="variable">ps</span> <span class="operator">=</span> connection.prepareStatement(sql, <span class="keyword">new</span> <span class="title class_">String</span>[] &#123;<span class="string">&quot;id&quot;</span>&#125;);</span><br><span class="line">            ps.setString(<span class="number">1</span>, product.getName());</span><br><span class="line">            ps.setString(<span class="number">2</span>, product.getDescription());</span><br><span class="line">            ps.setDouble(<span class="number">3</span>, product.getPrice());</span><br><span class="line">            ps.setInt(<span class="number">4</span>, product.getStock());</span><br><span class="line">            ps.setString(<span class="number">5</span>, product.getCategory());</span><br><span class="line">            <span class="keyword">return</span> ps;</span><br><span class="line">        &#125;, keyHolder);</span><br><span class="line"></span><br><span class="line">        product.setId(keyHolder.getKey().longValue());</span><br><span class="line">        <span class="keyword">return</span> product;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+
+
+
 
 		</div>
 
@@ -766,7 +795,7 @@
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
 		<div class="page-title">Day1 - MVC架構</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Day-1-%E7%B8%BD%E7%B5%90"><span class="nav-text">Day 1 總結</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-text">MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%EF%BC%9F"><span class="nav-text">為什麼需要軟體工程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-text">MVC 是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%B8%8F%E2%83%A3-%E5%AE%9A%E7%BE%A9"><span class="nav-text">1️⃣ 定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%B8%8F%E2%83%A3-MVC-%E7%9A%84%E4%B8%89%E5%80%8B%E6%A0%B8%E5%BF%83%E7%B5%84%E4%BB%B6"><span class="nav-text">2️⃣ MVC 的三個核心組件</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-text">MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%9C%80%E8%A6%81%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%EF%BC%9F"><span class="nav-text">為什麼需要軟體工程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%B8%8F%E2%83%A3-%E5%AE%9A%E7%BE%A9"><span class="nav-text">1️⃣ 定義</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%B8%8F%E2%83%A3-MVC-%E7%9A%84%E4%B8%89%E5%80%8B%E6%A0%B8%E5%BF%83%E7%B5%84%E4%BB%B6"><span class="nav-text">2️⃣ MVC 的三個核心組件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller-Service-Dao"><span class="nav-text">Controller-Service-Dao</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%B8%8F%E2%83%A3-Controller-Service-DAO-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-text">1️⃣ Controller-Service-DAO 是什麼？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%B8%8F%E2%83%A3-%E7%AF%84%E4%BE%8B"><span class="nav-text">2️⃣ 範例</span></a></li></ol></li></ol>
 
 	</div>
 </div>
